@@ -1,0 +1,196 @@
+---
+swagger: "3.0"
+info:
+  version: "1.0.0"
+  title: "API de Cours"
+paths:
+  /cours/{id}:
+    get:
+      tags:
+      - "Cours"
+      summary: "Retourne les informations du cours"
+      operationId: "cours_id_get"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "200":
+          description: "Informations du cours"
+      x-swagger-router-controller: "swagger_server.controllers.cours_controller"
+    post:
+      tags:
+      - "Cours"
+      summary: "Crée un nouveau cours"
+      operationId: "cours_id_post"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "201":
+          description: "Cours créé"
+      x-swagger-router-controller: "swagger_server.controllers.cours_controller"
+    delete:
+      tags:
+      - "Cours"
+      summary: "Supprime un cours"
+      operationId: "cours_id_delete"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "204":
+          description: "Cours supprimé"
+      x-swagger-router-controller: "swagger_server.controllers.cours_controller"
+  /cours/{id}/fichier:
+    get:
+      tags:
+      - "Contenu de cours"
+      summary: "Retourne un fichier selon le chemin spécifié"
+      operationId: "cours_id_fichier_get"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      - name: "chemin"
+        in: "query"
+        required: true
+      responses:
+        "200":
+          description: "Fichier retourné"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+    post:
+      tags:
+      - "Contenu de cours"
+      summary: "Télécharge un fichier pour le cours"
+      operationId: "cours_id_fichier_post"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "201":
+          description: "Fichier téléchargé"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+    delete:
+      tags:
+      - "Contenu de cours"
+      summary: "Supprime un fichier du cours"
+      operationId: "cours_id_fichier_delete"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      - name: "chemin"
+        in: "query"
+        required: true
+      responses:
+        "204":
+          description: "Fichier supprimé"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+  /cours/{id}/dossier:
+    get:
+      tags:
+      - "Contenu de cours"
+      summary: "Retourne un JSON du contenu du dossier"
+      operationId: "cours_id_dossier_get"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      - name: "dossier"
+        in: "query"
+        required: true
+      responses:
+        "200":
+          description: "Contenu JSON du dossier"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+    post:
+      tags:
+      - "Contenu de cours"
+      summary: "Crée un nouveau dossier pour le cours"
+      operationId: "cours_id_dossier_post"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "201":
+          description: "Dossier créé"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+    delete:
+      tags:
+      - "Contenu de cours"
+      summary: "Supprime un dossier du cours"
+      operationId: "cours_id_dossier_delete"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      - name: "dossier"
+        in: "query"
+        required: true
+      responses:
+        "204":
+          description: "Dossier supprimé"
+      x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
+  /cours/seances/{id}:
+    get:
+      tags:
+      - "Séances"
+      summary: "Retourne les infos sur la séance"
+      operationId: "cours_seances_id_get"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "200":
+          description: "Informations sur la séance"
+      x-swagger-router-controller: "swagger_server.controllers.séances_controller"
+    post:
+      tags:
+      - "Séances"
+      summary: "Crée une nouvelle séance"
+      operationId: "cours_seances_id_post"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "201":
+          description: "Séance créée"
+      x-swagger-router-controller: "swagger_server.controllers.séances_controller"
+    delete:
+      tags:
+      - "Séances"
+      summary: "Supprime une séance"
+      operationId: "cours_seances_id_delete"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+      responses:
+        "204":
+          description: "Séance supprimée"
+      x-swagger-router-controller: "swagger_server.controllers.séances_controller"
+  /search/{tag}:
+    get:
+      tags:
+      - "Recherche de cours"
+      summary: "Recherche de cours par tag"
+      operationId: "search_tag_get"
+      parameters:
+      - name: "tag"
+        in: "path"
+        required: true
+      - name: "mode"
+        in: "query"
+        required: false
+      responses:
+        "200":
+          description: "Liste des cours correspondants"
+      x-swagger-router-controller: "swagger_server.controllers.recherche_de_cours_controller"
+definitions: {}

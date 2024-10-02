@@ -1,0 +1,414 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Cours",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/cours/{id}": {
+      "get": {
+        "tags": [
+          "Cours"
+        ],
+        "summary": "Retourne les informations du cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informations du cours"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cours"
+        ],
+        "summary": "Crée un nouveau cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titre": {
+                    "type": "string"
+                  },
+                  "discipline": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "seances": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cours créé"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cours"
+        ],
+        "summary": "Supprime un cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Cours supprimé"
+          }
+        }
+      }
+    },
+    "/cours/{id}/fichier": {
+      "get": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Retourne un fichier selon le chemin spécifié",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chemin",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fichier retourné"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Télécharge un fichier pour le cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fichier": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "chemin": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Fichier téléchargé"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Supprime un fichier du cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chemin",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Fichier supprimé"
+          }
+        }
+      }
+    },
+    "/cours/{id}/dossier": {
+      "get": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Retourne un JSON du contenu du dossier",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dossier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contenu JSON du dossier"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Crée un nouveau dossier pour le cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dossier": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dossier créé"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contenu de cours"
+        ],
+        "summary": "Supprime un dossier du cours",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dossier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Dossier supprimé"
+          }
+        }
+      }
+    },
+    "/cours/seances/{id}": {
+      "get": {
+        "tags": [
+          "Séances"
+        ],
+        "summary": "Retourne les infos sur la séance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Informations sur la séance"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Séances"
+        ],
+        "summary": "Crée une nouvelle séance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "semaine": {
+                    "type": "integer"
+                  },
+                  "titre_thema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Séance créée"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Séances"
+        ],
+        "summary": "Supprime une séance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Séance supprimée"
+          }
+        }
+      }
+    },
+    "/search/{tag}": {
+      "get": {
+        "tags": [
+          "Recherche de cours"
+        ],
+        "summary": "Recherche de cours par tag",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste des cours correspondants"
+          }
+        }
+      }
+    }
+  }
+}
