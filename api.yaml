@@ -3,6 +3,14 @@ info:
   title: API de Cours
   version: 1.0.0
 paths:
+  /cours:
+      get:
+        tags:
+          - Cours
+        summary: Retourne la liste des cours
+        responses:
+          "200":
+            description: Liste des cours
   /cours/{id}:
     get:
       tags:
@@ -179,7 +187,21 @@ paths:
         "204":
           description: Dossier supprimé
 
-  /cours/seances/{id}:
+  /cours/{id}/seances:
+    get:
+      tags:
+        - seances
+      summary: Retourne la liste des séances
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Liste des séances
+
+  /cours/{id}/seances/{idSeance}:
     get:
       tags:
         - seances
@@ -187,6 +209,10 @@ paths:
       parameters:
         - in: path
           name: id
+          required: true
+          type: integer
+        - in: path
+          name: idSeance
           required: true
           type: integer
       responses:

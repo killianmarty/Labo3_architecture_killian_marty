@@ -4,6 +4,17 @@ info:
   version: "1.0.0"
   title: "API de Cours"
 paths:
+  /cours:
+    get:
+      tags:
+      - "Cours"
+      summary: "Retourne la liste des cours"
+      operationId: "cours_get"
+      parameters: []
+      responses:
+        "200":
+          description: "Liste des cours"
+      x-swagger-router-controller: "swagger_server.controllers.cours_controller"
   /cours/{id}:
     get:
       tags:
@@ -149,14 +160,33 @@ paths:
         "204":
           description: "Dossier supprimé"
       x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
-  /cours/seances/{id}:
+  /cours/{id}/seances:
+    get:
+      tags:
+      - "seances"
+      summary: "Retourne la liste des séances"
+      operationId: "cours_id_seances_get"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Liste des séances"
+      x-swagger-router-controller: "swagger_server.controllers.seances_controller"
+  /cours/{id}/seances/{idSeance}:
     get:
       tags:
       - "seances"
       summary: "Retourne les infos sur la séance"
-      operationId: "cours_seances_id_get"
+      operationId: "cours_id_seances_id_seance_get"
       parameters:
       - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "idSeance"
         in: "path"
         required: true
         type: "integer"
@@ -168,7 +198,7 @@ paths:
       tags:
       - "seances"
       summary: "Crée une nouvelle séance"
-      operationId: "cours_seances_id_post"
+      operationId: "cours_id_seances_id_seance_post"
       parameters:
       - name: "id"
         in: "path"
@@ -182,7 +212,7 @@ paths:
       tags:
       - "seances"
       summary: "Supprime une séance"
-      operationId: "cours_seances_id_delete"
+      operationId: "cours_id_seances_id_seance_delete"
       parameters:
       - name: "id"
         in: "path"

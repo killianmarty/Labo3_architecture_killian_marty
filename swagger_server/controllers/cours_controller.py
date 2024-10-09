@@ -4,6 +4,17 @@ import six
 from swagger_server import util
 
 
+def cours_get():  # noqa: E501
+    """Retourne la liste des cours
+
+     # noqa: E501
+
+
+    :rtype: None
+    """
+    return 'do some magic!'
+
+
 def cours_id_delete(id):  # noqa: E501
     """Supprime un cours
 

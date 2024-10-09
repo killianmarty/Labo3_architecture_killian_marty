@@ -76,13 +76,15 @@ Class | Method | HTTP request | Description
 *ContenuDeCoursApi* | [**cours_id_fichier_delete**](docs/ContenuDeCoursApi.md#cours_id_fichier_delete) | **DELETE** /cours/{id}/fichier | Supprime un fichier du cours
 *ContenuDeCoursApi* | [**cours_id_fichier_get**](docs/ContenuDeCoursApi.md#cours_id_fichier_get) | **GET** /cours/{id}/fichier | Retourne un fichier selon le chemin spécifié
 *ContenuDeCoursApi* | [**cours_id_fichier_post**](docs/ContenuDeCoursApi.md#cours_id_fichier_post) | **POST** /cours/{id}/fichier | Télécharge un fichier pour le cours
+*CoursApi* | [**cours_get**](docs/CoursApi.md#cours_get) | **GET** /cours | Retourne la liste des cours
 *CoursApi* | [**cours_id_delete**](docs/CoursApi.md#cours_id_delete) | **DELETE** /cours/{id} | Supprime un cours
 *CoursApi* | [**cours_id_get**](docs/CoursApi.md#cours_id_get) | **GET** /cours/{id} | Retourne les informations du cours
 *CoursApi* | [**cours_id_post**](docs/CoursApi.md#cours_id_post) | **POST** /cours/{id} | Crée un nouveau cours
 *RechercheDeCoursApi* | [**search_tag_get**](docs/RechercheDeCoursApi.md#search_tag_get) | **GET** /search/{tag} | Recherche de cours par tag
-*SeancesApi* | [**cours_seances_id_delete**](docs/SeancesApi.md#cours_seances_id_delete) | **DELETE** /cours/seances/{id} | Supprime une séance
-*SeancesApi* | [**cours_seances_id_get**](docs/SeancesApi.md#cours_seances_id_get) | **GET** /cours/seances/{id} | Retourne les infos sur la séance
-*SeancesApi* | [**cours_seances_id_post**](docs/SeancesApi.md#cours_seances_id_post) | **POST** /cours/seances/{id} | Crée une nouvelle séance
+*SeancesApi* | [**cours_id_seances_get**](docs/SeancesApi.md#cours_id_seances_get) | **GET** /cours/{id}/seances | Retourne la liste des séances
+*SeancesApi* | [**cours_id_seances_id_seance_delete**](docs/SeancesApi.md#cours_id_seances_id_seance_delete) | **DELETE** /cours/{id}/seances/{idSeance} | Supprime une séance
+*SeancesApi* | [**cours_id_seances_id_seance_get**](docs/SeancesApi.md#cours_id_seances_id_seance_get) | **GET** /cours/{id}/seances/{idSeance} | Retourne les infos sur la séance
+*SeancesApi* | [**cours_id_seances_id_seance_post**](docs/SeancesApi.md#cours_id_seances_id_seance_post) | **POST** /cours/{id}/seances/{idSeance} | Crée une nouvelle séance
 
 
 ## Documentation For Models
