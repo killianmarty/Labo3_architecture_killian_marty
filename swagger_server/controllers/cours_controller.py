@@ -10,12 +10,10 @@ def cours_id_delete(id):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -25,12 +23,10 @@ def cours_id_get(id):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -40,10 +36,8 @@ def cours_id_post(id):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'

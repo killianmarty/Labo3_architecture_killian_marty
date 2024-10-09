@@ -10,16 +10,12 @@ def cours_id_dossier_delete(id, dossier):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
     :param dossier: 
-    :type dossier: dict | bytes
+    :type dossier: str
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
-    if connexion.request.is_json:
-        dossier = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -29,16 +25,12 @@ def cours_id_dossier_get(id, dossier):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
     :param dossier: 
-    :type dossier: dict | bytes
+    :type dossier: str
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
-    if connexion.request.is_json:
-        dossier = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -48,12 +40,10 @@ def cours_id_dossier_post(id):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -63,16 +53,12 @@ def cours_id_fichier_delete(id, chemin):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
     :param chemin: 
-    :type chemin: dict | bytes
+    :type chemin: str
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
-    if connexion.request.is_json:
-        chemin = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -82,16 +68,12 @@ def cours_id_fichier_get(id, chemin):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
     :param chemin: 
-    :type chemin: dict | bytes
+    :type chemin: str
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
-    if connexion.request.is_json:
-        chemin = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -101,10 +83,8 @@ def cours_id_fichier_post(id):  # noqa: E501
      # noqa: E501
 
     :param id: 
-    :type id: dict | bytes
+    :type id: int
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        id = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'

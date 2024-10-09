@@ -22,8 +22,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.RechercheDeCoursApi()
-tag = NULL # object | 
-mode = NULL # object |  (optional)
+tag = 'tag_example' # str | 
+mode = 'mode_example' # str |  (optional)
 
 try:
     # Recherche de cours par tag
@@ -36,8 +36,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | [**object**](.md)|  | 
- **mode** | [**object**](.md)|  | [optional] 
+ **tag** | **str**|  | 
+ **mode** | **str**|  | [optional] 
 
 ### Return type
 

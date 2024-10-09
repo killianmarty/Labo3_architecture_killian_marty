@@ -1,18 +1,18 @@
-# swagger_client.CoursApi
+# swagger_client.SeancesApi
 
 All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cours_id_delete**](CoursApi.md#cours_id_delete) | **DELETE** /cours/{id} | Supprime un cours
-[**cours_id_get**](CoursApi.md#cours_id_get) | **GET** /cours/{id} | Retourne les informations du cours
-[**cours_id_post**](CoursApi.md#cours_id_post) | **POST** /cours/{id} | Crée un nouveau cours
+[**cours_seances_id_delete**](SeancesApi.md#cours_seances_id_delete) | **DELETE** /cours/seances/{id} | Supprime une séance
+[**cours_seances_id_get**](SeancesApi.md#cours_seances_id_get) | **GET** /cours/seances/{id} | Retourne les infos sur la séance
+[**cours_seances_id_post**](SeancesApi.md#cours_seances_id_post) | **POST** /cours/seances/{id} | Crée une nouvelle séance
 
 
-# **cours_id_delete**
-> cours_id_delete(id)
+# **cours_seances_id_delete**
+> cours_seances_id_delete(id)
 
-Supprime un cours
+Supprime une séance
 
 ### Example
 ```python
@@ -23,14 +23,14 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.CoursApi()
+api_instance = swagger_client.SeancesApi()
 id = 56 # int | 
 
 try:
-    # Supprime un cours
-    api_instance.cours_id_delete(id)
+    # Supprime une séance
+    api_instance.cours_seances_id_delete(id)
 except ApiException as e:
-    print("Exception when calling CoursApi->cours_id_delete: %s\n" % e)
+    print("Exception when calling SeancesApi->cours_seances_id_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -54,10 +54,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cours_id_get**
-> cours_id_get(id)
+# **cours_seances_id_get**
+> cours_seances_id_get(id)
 
-Retourne les informations du cours
+Retourne les infos sur la séance
 
 ### Example
 ```python
@@ -68,14 +68,14 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.CoursApi()
+api_instance = swagger_client.SeancesApi()
 id = 56 # int | 
 
 try:
-    # Retourne les informations du cours
-    api_instance.cours_id_get(id)
+    # Retourne les infos sur la séance
+    api_instance.cours_seances_id_get(id)
 except ApiException as e:
-    print("Exception when calling CoursApi->cours_id_get: %s\n" % e)
+    print("Exception when calling SeancesApi->cours_seances_id_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,10 +99,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cours_id_post**
-> cours_id_post(id)
+# **cours_seances_id_post**
+> cours_seances_id_post(id)
 
-Crée un nouveau cours
+Crée une nouvelle séance
 
 ### Example
 ```python
@@ -113,14 +113,14 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.CoursApi()
+api_instance = swagger_client.SeancesApi()
 id = 56 # int | 
 
 try:
-    # Crée un nouveau cours
-    api_instance.cours_id_post(id)
+    # Crée une nouvelle séance
+    api_instance.cours_seances_id_post(id)
 except ApiException as e:
-    print("Exception when calling CoursApi->cours_id_post: %s\n" % e)
+    print("Exception when calling SeancesApi->cours_seances_id_post: %s\n" % e)
 ```
 
 ### Parameters

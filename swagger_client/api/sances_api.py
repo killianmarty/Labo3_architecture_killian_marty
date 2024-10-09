@@ -42,7 +42,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,7 +63,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -131,7 +131,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,7 +152,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -220,7 +220,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -241,7 +241,7 @@ class SancesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

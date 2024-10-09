@@ -42,8 +42,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object dossier: (required)
+        :param int id: (required)
+        :param str dossier: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,8 +64,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object dossier: (required)
+        :param int id: (required)
+        :param str dossier: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -139,8 +139,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object dossier: (required)
+        :param int id: (required)
+        :param str dossier: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -161,8 +161,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object dossier: (required)
+        :param int id: (required)
+        :param str dossier: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -236,7 +236,7 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -257,7 +257,7 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -325,8 +325,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object chemin: (required)
+        :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -347,8 +347,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object chemin: (required)
+        :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -422,8 +422,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object chemin: (required)
+        :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -444,8 +444,8 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
-        :param object chemin: (required)
+        :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -519,7 +519,7 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -540,7 +540,7 @@ class ContenuDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object id: (required)
+        :param int id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

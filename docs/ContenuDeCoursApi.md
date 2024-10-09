@@ -27,8 +27,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
-dossier = NULL # object | 
+id = 56 # int | 
+dossier = 'dossier_example' # str | 
 
 try:
     # Supprime un dossier du cours
@@ -41,8 +41,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
- **dossier** | [**object**](.md)|  | 
+ **id** | **int**|  | 
+ **dossier** | **str**|  | 
 
 ### Return type
 
@@ -74,8 +74,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
-dossier = NULL # object | 
+id = 56 # int | 
+dossier = 'dossier_example' # str | 
 
 try:
     # Retourne un JSON du contenu du dossier
@@ -88,8 +88,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
- **dossier** | [**object**](.md)|  | 
+ **id** | **int**|  | 
+ **dossier** | **str**|  | 
 
 ### Return type
 
@@ -121,7 +121,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
+id = 56 # int | 
 
 try:
     # Crée un nouveau dossier pour le cours
@@ -134,7 +134,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -166,8 +166,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
-chemin = NULL # object | 
+id = 56 # int | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Supprime un fichier du cours
@@ -180,8 +180,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
- **chemin** | [**object**](.md)|  | 
+ **id** | **int**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 
@@ -213,8 +213,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
-chemin = NULL # object | 
+id = 56 # int | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Retourne un fichier selon le chemin spécifié
@@ -227,8 +227,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
- **chemin** | [**object**](.md)|  | 
+ **id** | **int**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 
@@ -260,7 +260,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
-id = NULL # object | 
+id = 56 # int | 
 
 try:
     # Télécharge un fichier pour le cours
@@ -273,7 +273,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **int**|  | 
 
 ### Return type
 

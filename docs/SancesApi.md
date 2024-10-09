@@ -24,7 +24,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SancesApi()
-id = NULL # object | 
+id = 56 # int | 
 
 try:
     # Supprime une séance
@@ -37,7 +37,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -69,7 +69,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SancesApi()
-id = NULL # object | 
+id = 56 # int | 
 
 try:
     # Retourne les infos sur la séance
@@ -82,7 +82,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -114,7 +114,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SancesApi()
-id = NULL # object | 
+id = 56 # int | 
 
 try:
     # Crée une nouvelle séance
@@ -127,7 +127,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**object**](.md)|  | 
+ **id** | **int**|  | 
 
 ### Return type
 

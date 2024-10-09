@@ -10,14 +10,10 @@ def search_tag_get(tag, mode=None):  # noqa: E501
      # noqa: E501
 
     :param tag: 
-    :type tag: dict | bytes
+    :type tag: str
     :param mode: 
-    :type mode: dict | bytes
+    :type mode: str
 
     :rtype: None
     """
-    if connexion.request.is_json:
-        tag = .from_dict(connexion.request.get_json())  # noqa: E501
-    if connexion.request.is_json:
-        mode = .from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'

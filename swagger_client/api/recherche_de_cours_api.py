@@ -42,8 +42,8 @@ class RechercheDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object tag: (required)
-        :param object mode:
+        :param str tag: (required)
+        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,8 +64,8 @@ class RechercheDeCoursApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object tag: (required)
-        :param object mode:
+        :param str tag: (required)
+        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

@@ -12,8 +12,7 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       responses:
         "200":
           description: Informations du cours
@@ -26,8 +25,7 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       requestBody:
         required: true
         content:
@@ -59,8 +57,7 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       responses:
         "204":
           description: Cours supprimé
@@ -74,13 +71,11 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
         - in: query
           name: chemin
           required: true
-          schema:
-            type: string
+          type: string
       responses:
         "200":
           description: Fichier retourné
@@ -93,8 +88,7 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       requestBody:
         required: true
         content:
@@ -119,13 +113,11 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
         - in: query
           name: chemin
           required: true
-          schema:
-            type: string
+          type: string
       responses:
         "204":
           description: Fichier supprimé
@@ -139,13 +131,11 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
         - in: query
           name: dossier
           required: true
-          schema:
-            type: string
+          type: string
       responses:
         "200":
           description: Contenu JSON du dossier
@@ -158,8 +148,7 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       requestBody:
         required: true
         content:
@@ -181,13 +170,11 @@ paths:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
         - in: query
           name: dossier
           required: true
-          schema:
-            type: string
+          type: string
       responses:
         "204":
           description: Dossier supprimé
@@ -195,28 +182,26 @@ paths:
   /cours/seances/{id}:
     get:
       tags:
-        - Séances
+        - seances
       summary: Retourne les infos sur la séance
       parameters:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       responses:
         "200":
           description: Informations sur la séance
 
     post:
       tags:
-        - Séances
+        - seances
       summary: Crée une nouvelle séance
       parameters:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       requestBody:
         required: true
         content:
@@ -234,14 +219,13 @@ paths:
 
     delete:
       tags:
-        - Séances
+        - seances
       summary: Supprime une séance
       parameters:
         - in: path
           name: id
           required: true
-          schema:
-            type: integer
+          type: integer
       responses:
         "204":
           description: Séance supprimée
@@ -255,13 +239,43 @@ paths:
         - in: path
           name: tag
           required: true
-          schema:
-            type: string
+          type: string
         - in: query
           name: mode
           required: false
-          schema:
-            type: string
+          type: string
       responses:
         "200":
           description: Liste des cours correspondants
+
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "https://petstore.swagger.io/oauth/authorize"
+    flow: "implicit"
+    scopes:
+      read:pets: "read your pets"
+      write:pets: "modify pets in your account"
+definitions:
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
+    example:
+      code: 0
+      type: "type"
+      message: "message"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
+
