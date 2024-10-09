@@ -122,43 +122,45 @@ class SeancesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cours_id_seances_id_seance_delete(self, id, **kwargs):  # noqa: E501
+    def cours_id_seances_id_seance_delete(self, id, id_seance, **kwargs):  # noqa: E501
         """Supprime une séance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_seances_id_seance_delete(id, async_req=True)
+        >>> thread = api.cours_id_seances_id_seance_delete(id, id_seance, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param int id_seance: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_seances_id_seance_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.cours_id_seances_id_seance_delete_with_http_info(id, id_seance, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_seances_id_seance_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.cours_id_seances_id_seance_delete_with_http_info(id, id_seance, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_seances_id_seance_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+    def cours_id_seances_id_seance_delete_with_http_info(self, id, id_seance, **kwargs):  # noqa: E501
         """Supprime une séance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_seances_id_seance_delete_with_http_info(id, async_req=True)
+        >>> thread = api.cours_id_seances_id_seance_delete_with_http_info(id, id_seance, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param int id_seance: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'id_seance']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -177,12 +179,18 @@ class SeancesApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_seances_id_seance_delete`")  # noqa: E501
+        # verify the required parameter 'id_seance' is set
+        if ('id_seance' not in params or
+                params['id_seance'] is None):
+            raise ValueError("Missing the required parameter `id_seance` when calling `cours_id_seances_id_seance_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']  # noqa: E501
+        if 'id_seance' in params:
+            path_params['idSeance'] = params['id_seance']  # noqa: E501
 
         query_params = []
 
@@ -308,43 +316,45 @@ class SeancesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cours_id_seances_id_seance_post(self, id, **kwargs):  # noqa: E501
+    def cours_id_seances_id_seance_post(self, id, id_seance, **kwargs):  # noqa: E501
         """Crée une nouvelle séance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_seances_id_seance_post(id, async_req=True)
+        >>> thread = api.cours_id_seances_id_seance_post(id, id_seance, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param int id_seance: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_seances_id_seance_post_with_http_info(id, **kwargs)  # noqa: E501
+            return self.cours_id_seances_id_seance_post_with_http_info(id, id_seance, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_seances_id_seance_post_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.cours_id_seances_id_seance_post_with_http_info(id, id_seance, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_seances_id_seance_post_with_http_info(self, id, **kwargs):  # noqa: E501
+    def cours_id_seances_id_seance_post_with_http_info(self, id, id_seance, **kwargs):  # noqa: E501
         """Crée une nouvelle séance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_seances_id_seance_post_with_http_info(id, async_req=True)
+        >>> thread = api.cours_id_seances_id_seance_post_with_http_info(id, id_seance, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param int id_seance: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'id_seance']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -363,12 +373,18 @@ class SeancesApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_seances_id_seance_post`")  # noqa: E501
+        # verify the required parameter 'id_seance' is set
+        if ('id_seance' not in params or
+                params['id_seance'] is None):
+            raise ValueError("Missing the required parameter `id_seance` when calling `cours_id_seances_id_seance_post`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']  # noqa: E501
+        if 'id_seance' in params:
+            path_params['idSeance'] = params['id_seance']  # noqa: E501
 
         query_params = []
 

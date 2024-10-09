@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_seances_id_seance_delete**
-> cours_id_seances_id_seance_delete(id)
+> cours_id_seances_id_seance_delete(id, id_seance)
 
 Supprime une séance
 
@@ -71,10 +71,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.SeancesApi()
 id = 56 # int | 
+id_seance = 56 # int | 
 
 try:
     # Supprime une séance
-    api_instance.cours_id_seances_id_seance_delete(id)
+    api_instance.cours_id_seances_id_seance_delete(id, id_seance)
 except ApiException as e:
     print("Exception when calling SeancesApi->cours_id_seances_id_seance_delete: %s\n" % e)
 ```
@@ -84,6 +85,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **id_seance** | **int**|  | 
 
 ### Return type
 
@@ -148,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_seances_id_seance_post**
-> cours_id_seances_id_seance_post(id)
+> cours_id_seances_id_seance_post(id, id_seance)
 
 Crée une nouvelle séance
 
@@ -163,10 +165,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.SeancesApi()
 id = 56 # int | 
+id_seance = 56 # int | 
 
 try:
     # Crée une nouvelle séance
-    api_instance.cours_id_seances_id_seance_post(id)
+    api_instance.cours_id_seances_id_seance_post(id, id_seance)
 except ApiException as e:
     print("Exception when calling SeancesApi->cours_id_seances_id_seance_post: %s\n" % e)
 ```
@@ -176,6 +179,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **id_seance** | **int**|  | 
 
 ### Return type
 

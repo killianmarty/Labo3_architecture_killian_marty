@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **cours_id_dossier_delete**
-> cours_id_dossier_delete(id, dossier)
+> cours_id_dossier_delete(id, chemin)
 
 Supprime un dossier du cours
 
@@ -28,11 +28,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
 id = 56 # int | 
-dossier = 'dossier_example' # str | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Supprime un dossier du cours
-    api_instance.cours_id_dossier_delete(id, dossier)
+    api_instance.cours_id_dossier_delete(id, chemin)
 except ApiException as e:
     print("Exception when calling ContenuDeCoursApi->cours_id_dossier_delete: %s\n" % e)
 ```
@@ -42,7 +42,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
- **dossier** | **str**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 
@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_dossier_get**
-> cours_id_dossier_get(id, dossier)
+> cours_id_dossier_get(id, chemin)
 
 Retourne un JSON du contenu du dossier
 
@@ -75,11 +75,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
 id = 56 # int | 
-dossier = 'dossier_example' # str | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Retourne un JSON du contenu du dossier
-    api_instance.cours_id_dossier_get(id, dossier)
+    api_instance.cours_id_dossier_get(id, chemin)
 except ApiException as e:
     print("Exception when calling ContenuDeCoursApi->cours_id_dossier_get: %s\n" % e)
 ```
@@ -89,7 +89,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
- **dossier** | **str**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_dossier_post**
-> cours_id_dossier_post(id)
+> cours_id_dossier_post(id, chemin)
 
 Crée un nouveau dossier pour le cours
 
@@ -122,10 +122,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
 id = 56 # int | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Crée un nouveau dossier pour le cours
-    api_instance.cours_id_dossier_post(id)
+    api_instance.cours_id_dossier_post(id, chemin)
 except ApiException as e:
     print("Exception when calling ContenuDeCoursApi->cours_id_dossier_post: %s\n" % e)
 ```
@@ -135,6 +136,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 
@@ -246,7 +248,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_fichier_post**
-> cours_id_fichier_post(id)
+> cours_id_fichier_post(id, chemin)
 
 Télécharge un fichier pour le cours
 
@@ -261,10 +263,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi()
 id = 56 # int | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Télécharge un fichier pour le cours
-    api_instance.cours_id_fichier_post(id)
+    api_instance.cours_id_fichier_post(id, chemin)
 except ApiException as e:
     print("Exception when calling ContenuDeCoursApi->cours_id_fichier_post: %s\n" % e)
 ```
@@ -274,6 +277,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **chemin** | **str**|  | 
 
 ### Return type
 

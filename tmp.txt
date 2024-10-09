@@ -14,7 +14,7 @@ cours (ref)
 
 
 cours/:id/                          -- retourne les informations du cours
-cours/:id/dossier1/fichier.pdf      -- retourne le fichier dossier1/fichier.pdf
+cours/:id/fichier.pdf      -- retourne le fichier dossier1/fichier.pdf
 cours/:id/dossier2                  -- retourne un json du contenu du dossier2
 cours/seances/:id                   -- retourne les infos sur la seance
 search/:tag/?mode=*                 -- recherche de cours

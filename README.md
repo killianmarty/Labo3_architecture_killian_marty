@@ -54,11 +54,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi(swagger_client.ApiClient(configuration))
 id = 56 # int | 
-dossier = 'dossier_example' # str | 
+chemin = 'chemin_example' # str | 
 
 try:
     # Supprime un dossier du cours
-    api_instance.cours_id_dossier_delete(id, dossier)
+    api_instance.cours_id_dossier_delete(id, chemin)
 except ApiException as e:
     print("Exception when calling ContenuDeCoursApi->cours_id_dossier_delete: %s\n" % e)
 

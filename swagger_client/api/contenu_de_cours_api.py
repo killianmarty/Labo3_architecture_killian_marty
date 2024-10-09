@@ -33,45 +33,45 @@ class ContenuDeCoursApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cours_id_dossier_delete(self, id, dossier, **kwargs):  # noqa: E501
+    def cours_id_dossier_delete(self, id, chemin, **kwargs):  # noqa: E501
         """Supprime un dossier du cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_delete(id, dossier, async_req=True)
+        >>> thread = api.cours_id_dossier_delete(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
-        :param str dossier: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_dossier_delete_with_http_info(id, dossier, **kwargs)  # noqa: E501
+            return self.cours_id_dossier_delete_with_http_info(id, chemin, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_dossier_delete_with_http_info(id, dossier, **kwargs)  # noqa: E501
+            (data) = self.cours_id_dossier_delete_with_http_info(id, chemin, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_dossier_delete_with_http_info(self, id, dossier, **kwargs):  # noqa: E501
+    def cours_id_dossier_delete_with_http_info(self, id, chemin, **kwargs):  # noqa: E501
         """Supprime un dossier du cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_delete_with_http_info(id, dossier, async_req=True)
+        >>> thread = api.cours_id_dossier_delete_with_http_info(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
-        :param str dossier: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'dossier']  # noqa: E501
+        all_params = ['id', 'chemin']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -90,10 +90,10 @@ class ContenuDeCoursApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_dossier_delete`")  # noqa: E501
-        # verify the required parameter 'dossier' is set
-        if ('dossier' not in params or
-                params['dossier'] is None):
-            raise ValueError("Missing the required parameter `dossier` when calling `cours_id_dossier_delete`")  # noqa: E501
+        # verify the required parameter 'chemin' is set
+        if ('chemin' not in params or
+                params['chemin'] is None):
+            raise ValueError("Missing the required parameter `chemin` when calling `cours_id_dossier_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -102,8 +102,8 @@ class ContenuDeCoursApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
-        if 'dossier' in params:
-            query_params.append(('dossier', params['dossier']))  # noqa: E501
+        if 'chemin' in params:
+            query_params.append(('chemin', params['chemin']))  # noqa: E501
 
         header_params = {}
 
@@ -130,45 +130,45 @@ class ContenuDeCoursApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cours_id_dossier_get(self, id, dossier, **kwargs):  # noqa: E501
+    def cours_id_dossier_get(self, id, chemin, **kwargs):  # noqa: E501
         """Retourne un JSON du contenu du dossier  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_get(id, dossier, async_req=True)
+        >>> thread = api.cours_id_dossier_get(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
-        :param str dossier: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_dossier_get_with_http_info(id, dossier, **kwargs)  # noqa: E501
+            return self.cours_id_dossier_get_with_http_info(id, chemin, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_dossier_get_with_http_info(id, dossier, **kwargs)  # noqa: E501
+            (data) = self.cours_id_dossier_get_with_http_info(id, chemin, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_dossier_get_with_http_info(self, id, dossier, **kwargs):  # noqa: E501
+    def cours_id_dossier_get_with_http_info(self, id, chemin, **kwargs):  # noqa: E501
         """Retourne un JSON du contenu du dossier  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_get_with_http_info(id, dossier, async_req=True)
+        >>> thread = api.cours_id_dossier_get_with_http_info(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
-        :param str dossier: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'dossier']  # noqa: E501
+        all_params = ['id', 'chemin']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -187,10 +187,10 @@ class ContenuDeCoursApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_dossier_get`")  # noqa: E501
-        # verify the required parameter 'dossier' is set
-        if ('dossier' not in params or
-                params['dossier'] is None):
-            raise ValueError("Missing the required parameter `dossier` when calling `cours_id_dossier_get`")  # noqa: E501
+        # verify the required parameter 'chemin' is set
+        if ('chemin' not in params or
+                params['chemin'] is None):
+            raise ValueError("Missing the required parameter `chemin` when calling `cours_id_dossier_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,8 @@ class ContenuDeCoursApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
-        if 'dossier' in params:
-            query_params.append(('dossier', params['dossier']))  # noqa: E501
+        if 'chemin' in params:
+            query_params.append(('chemin', params['chemin']))  # noqa: E501
 
         header_params = {}
 
@@ -227,43 +227,45 @@ class ContenuDeCoursApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cours_id_dossier_post(self, id, **kwargs):  # noqa: E501
+    def cours_id_dossier_post(self, id, chemin, **kwargs):  # noqa: E501
         """Crée un nouveau dossier pour le cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_post(id, async_req=True)
+        >>> thread = api.cours_id_dossier_post(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_dossier_post_with_http_info(id, **kwargs)  # noqa: E501
+            return self.cours_id_dossier_post_with_http_info(id, chemin, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_dossier_post_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.cours_id_dossier_post_with_http_info(id, chemin, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_dossier_post_with_http_info(self, id, **kwargs):  # noqa: E501
+    def cours_id_dossier_post_with_http_info(self, id, chemin, **kwargs):  # noqa: E501
         """Crée un nouveau dossier pour le cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_dossier_post_with_http_info(id, async_req=True)
+        >>> thread = api.cours_id_dossier_post_with_http_info(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'chemin']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -282,6 +284,10 @@ class ContenuDeCoursApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_dossier_post`")  # noqa: E501
+        # verify the required parameter 'chemin' is set
+        if ('chemin' not in params or
+                params['chemin'] is None):
+            raise ValueError("Missing the required parameter `chemin` when calling `cours_id_dossier_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -290,6 +296,8 @@ class ContenuDeCoursApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'chemin' in params:
+            query_params.append(('chemin', params['chemin']))  # noqa: E501
 
         header_params = {}
 
@@ -510,43 +518,45 @@ class ContenuDeCoursApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cours_id_fichier_post(self, id, **kwargs):  # noqa: E501
+    def cours_id_fichier_post(self, id, chemin, **kwargs):  # noqa: E501
         """Télécharge un fichier pour le cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_fichier_post(id, async_req=True)
+        >>> thread = api.cours_id_fichier_post(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.cours_id_fichier_post_with_http_info(id, **kwargs)  # noqa: E501
+            return self.cours_id_fichier_post_with_http_info(id, chemin, **kwargs)  # noqa: E501
         else:
-            (data) = self.cours_id_fichier_post_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.cours_id_fichier_post_with_http_info(id, chemin, **kwargs)  # noqa: E501
             return data
 
-    def cours_id_fichier_post_with_http_info(self, id, **kwargs):  # noqa: E501
+    def cours_id_fichier_post_with_http_info(self, id, chemin, **kwargs):  # noqa: E501
         """Télécharge un fichier pour le cours  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cours_id_fichier_post_with_http_info(id, async_req=True)
+        >>> thread = api.cours_id_fichier_post_with_http_info(id, chemin, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int id: (required)
+        :param str chemin: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'chemin']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -565,6 +575,10 @@ class ContenuDeCoursApi(object):
         if ('id' not in params or
                 params['id'] is None):
             raise ValueError("Missing the required parameter `id` when calling `cours_id_fichier_post`")  # noqa: E501
+        # verify the required parameter 'chemin' is set
+        if ('chemin' not in params or
+                params['chemin'] is None):
+            raise ValueError("Missing the required parameter `chemin` when calling `cours_id_fichier_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -573,6 +587,8 @@ class ContenuDeCoursApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'chemin' in params:
+            query_params.append(('chemin', params['chemin']))  # noqa: E501
 
         header_params = {}
 

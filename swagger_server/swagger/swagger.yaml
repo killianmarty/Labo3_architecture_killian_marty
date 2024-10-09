@@ -87,6 +87,10 @@ paths:
         in: "path"
         required: true
         type: "integer"
+      - name: "chemin"
+        in: "query"
+        required: true
+        type: "string"
       responses:
         "201":
           description: "Fichier téléchargé"
@@ -120,7 +124,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-      - name: "dossier"
+      - name: "chemin"
         in: "query"
         required: true
         type: "string"
@@ -138,6 +142,10 @@ paths:
         in: "path"
         required: true
         type: "integer"
+      - name: "chemin"
+        in: "query"
+        required: true
+        type: "string"
       responses:
         "201":
           description: "Dossier créé"
@@ -152,7 +160,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-      - name: "dossier"
+      - name: "chemin"
         in: "query"
         required: true
         type: "string"
@@ -204,6 +212,10 @@ paths:
         in: "path"
         required: true
         type: "integer"
+      - name: "idSeance"
+        in: "path"
+        required: true
+        type: "integer"
       responses:
         "201":
           description: "Séance créée"
@@ -215,6 +227,10 @@ paths:
       operationId: "cours_id_seances_id_seance_delete"
       parameters:
       - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "idSeance"
         in: "path"
         required: true
         type: "integer"
