@@ -97,7 +97,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cours_id_get**
-> cours_id_get(id)
+> cours_id_get(id, mode=mode)
 
 Retourne les informations du cours
 
@@ -112,10 +112,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.CoursApi()
 id = 56 # int | 
+mode = 'mode_example' # str |  (optional)
 
 try:
     # Retourne les informations du cours
-    api_instance.cours_id_get(id)
+    api_instance.cours_id_get(id, mode=mode)
 except ApiException as e:
     print("Exception when calling CoursApi->cours_id_get: %s\n" % e)
 ```
@@ -125,6 +126,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  | 
+ **mode** | **str**|  | [optional] 
 
 ### Return type
 

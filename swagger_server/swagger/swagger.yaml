@@ -26,6 +26,10 @@ paths:
         in: "path"
         required: true
         type: "integer"
+      - name: "mode"
+        in: "query"
+        required: false
+        type: "string"
       responses:
         "200":
           description: "Informations du cours"
@@ -58,21 +62,21 @@ paths:
         "204":
           description: "Cours supprimé"
       x-swagger-router-controller: "swagger_server.controllers.cours_controller"
-  /cours/{id}/fichier:
+  /cours/{id}/fichier/{idFichier}:
     get:
       tags:
       - "Contenu de cours"
       summary: "Retourne un fichier selon le chemin spécifié"
-      operationId: "cours_id_fichier_get"
+      operationId: "cours_id_fichier_id_fichier_get"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idFichier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "200":
           description: "Fichier retourné"
@@ -81,16 +85,16 @@ paths:
       tags:
       - "Contenu de cours"
       summary: "Télécharge un fichier pour le cours"
-      operationId: "cours_id_fichier_post"
+      operationId: "cours_id_fichier_id_fichier_post"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idFichier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "201":
           description: "Fichier téléchargé"
@@ -99,35 +103,35 @@ paths:
       tags:
       - "Contenu de cours"
       summary: "Supprime un fichier du cours"
-      operationId: "cours_id_fichier_delete"
+      operationId: "cours_id_fichier_id_fichier_delete"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idFichier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "204":
           description: "Fichier supprimé"
       x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
-  /cours/{id}/dossier:
+  /cours/{id}/dossier/{idDossier}:
     get:
       tags:
       - "Contenu de cours"
       summary: "Retourne un JSON du contenu du dossier"
-      operationId: "cours_id_dossier_get"
+      operationId: "cours_id_dossier_id_dossier_get"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idDossier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "200":
           description: "Contenu JSON du dossier"
@@ -136,16 +140,16 @@ paths:
       tags:
       - "Contenu de cours"
       summary: "Crée un nouveau dossier pour le cours"
-      operationId: "cours_id_dossier_post"
+      operationId: "cours_id_dossier_id_dossier_post"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idDossier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "201":
           description: "Dossier créé"
@@ -154,35 +158,20 @@ paths:
       tags:
       - "Contenu de cours"
       summary: "Supprime un dossier du cours"
-      operationId: "cours_id_dossier_delete"
+      operationId: "cours_id_dossier_id_dossier_delete"
       parameters:
       - name: "id"
         in: "path"
         required: true
         type: "integer"
-      - name: "chemin"
-        in: "query"
+      - name: "idDossier"
+        in: "path"
         required: true
-        type: "string"
+        type: "integer"
       responses:
         "204":
           description: "Dossier supprimé"
       x-swagger-router-controller: "swagger_server.controllers.contenu_de_cours_controller"
-  /cours/{id}/seances:
-    get:
-      tags:
-      - "seances"
-      summary: "Retourne la liste des séances"
-      operationId: "cours_id_seances_get"
-      parameters:
-      - name: "id"
-        in: "path"
-        required: true
-        type: "integer"
-      responses:
-        "200":
-          description: "Liste des séances"
-      x-swagger-router-controller: "swagger_server.controllers.seances_controller"
   /cours/{id}/seances/{idSeance}:
     get:
       tags:

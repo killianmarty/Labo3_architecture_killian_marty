@@ -213,6 +213,7 @@ class CoursApi(object):
 
         :param async_req bool
         :param int id: (required)
+        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -234,12 +235,13 @@ class CoursApi(object):
 
         :param async_req bool
         :param int id: (required)
+        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'mode']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -266,6 +268,8 @@ class CoursApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
 

@@ -54,13 +54,13 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.ContenuDeCoursApi(swagger_client.ApiClient(configuration))
 id = 56 # int | 
-chemin = 'chemin_example' # str | 
+id_dossier = 56 # int | 
 
 try:
     # Supprime un dossier du cours
-    api_instance.cours_id_dossier_delete(id, chemin)
+    api_instance.cours_id_dossier_id_dossier_delete(id, id_dossier)
 except ApiException as e:
-    print("Exception when calling ContenuDeCoursApi->cours_id_dossier_delete: %s\n" % e)
+    print("Exception when calling ContenuDeCoursApi->cours_id_dossier_id_dossier_delete: %s\n" % e)
 
 ```
 
@@ -70,18 +70,17 @@ All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContenuDeCoursApi* | [**cours_id_dossier_delete**](docs/ContenuDeCoursApi.md#cours_id_dossier_delete) | **DELETE** /cours/{id}/dossier | Supprime un dossier du cours
-*ContenuDeCoursApi* | [**cours_id_dossier_get**](docs/ContenuDeCoursApi.md#cours_id_dossier_get) | **GET** /cours/{id}/dossier | Retourne un JSON du contenu du dossier
-*ContenuDeCoursApi* | [**cours_id_dossier_post**](docs/ContenuDeCoursApi.md#cours_id_dossier_post) | **POST** /cours/{id}/dossier | Crée un nouveau dossier pour le cours
-*ContenuDeCoursApi* | [**cours_id_fichier_delete**](docs/ContenuDeCoursApi.md#cours_id_fichier_delete) | **DELETE** /cours/{id}/fichier | Supprime un fichier du cours
-*ContenuDeCoursApi* | [**cours_id_fichier_get**](docs/ContenuDeCoursApi.md#cours_id_fichier_get) | **GET** /cours/{id}/fichier | Retourne un fichier selon le chemin spécifié
-*ContenuDeCoursApi* | [**cours_id_fichier_post**](docs/ContenuDeCoursApi.md#cours_id_fichier_post) | **POST** /cours/{id}/fichier | Télécharge un fichier pour le cours
+*ContenuDeCoursApi* | [**cours_id_dossier_id_dossier_delete**](docs/ContenuDeCoursApi.md#cours_id_dossier_id_dossier_delete) | **DELETE** /cours/{id}/dossier/{idDossier} | Supprime un dossier du cours
+*ContenuDeCoursApi* | [**cours_id_dossier_id_dossier_get**](docs/ContenuDeCoursApi.md#cours_id_dossier_id_dossier_get) | **GET** /cours/{id}/dossier/{idDossier} | Retourne un JSON du contenu du dossier
+*ContenuDeCoursApi* | [**cours_id_dossier_id_dossier_post**](docs/ContenuDeCoursApi.md#cours_id_dossier_id_dossier_post) | **POST** /cours/{id}/dossier/{idDossier} | Crée un nouveau dossier pour le cours
+*ContenuDeCoursApi* | [**cours_id_fichier_id_fichier_delete**](docs/ContenuDeCoursApi.md#cours_id_fichier_id_fichier_delete) | **DELETE** /cours/{id}/fichier/{idFichier} | Supprime un fichier du cours
+*ContenuDeCoursApi* | [**cours_id_fichier_id_fichier_get**](docs/ContenuDeCoursApi.md#cours_id_fichier_id_fichier_get) | **GET** /cours/{id}/fichier/{idFichier} | Retourne un fichier selon le chemin spécifié
+*ContenuDeCoursApi* | [**cours_id_fichier_id_fichier_post**](docs/ContenuDeCoursApi.md#cours_id_fichier_id_fichier_post) | **POST** /cours/{id}/fichier/{idFichier} | Télécharge un fichier pour le cours
 *CoursApi* | [**cours_get**](docs/CoursApi.md#cours_get) | **GET** /cours | Retourne la liste des cours
 *CoursApi* | [**cours_id_delete**](docs/CoursApi.md#cours_id_delete) | **DELETE** /cours/{id} | Supprime un cours
 *CoursApi* | [**cours_id_get**](docs/CoursApi.md#cours_id_get) | **GET** /cours/{id} | Retourne les informations du cours
 *CoursApi* | [**cours_id_post**](docs/CoursApi.md#cours_id_post) | **POST** /cours/{id} | Crée un nouveau cours
 *RechercheDeCoursApi* | [**search_tag_get**](docs/RechercheDeCoursApi.md#search_tag_get) | **GET** /search/{tag} | Recherche de cours par tag
-*SeancesApi* | [**cours_id_seances_get**](docs/SeancesApi.md#cours_id_seances_get) | **GET** /cours/{id}/seances | Retourne la liste des séances
 *SeancesApi* | [**cours_id_seances_id_seance_delete**](docs/SeancesApi.md#cours_id_seances_id_seance_delete) | **DELETE** /cours/{id}/seances/{idSeance} | Supprime une séance
 *SeancesApi* | [**cours_id_seances_id_seance_get**](docs/SeancesApi.md#cours_id_seances_id_seance_get) | **GET** /cours/{id}/seances/{idSeance} | Retourne les infos sur la séance
 *SeancesApi* | [**cours_id_seances_id_seance_post**](docs/SeancesApi.md#cours_id_seances_id_seance_post) | **POST** /cours/{id}/seances/{idSeance} | Crée une nouvelle séance

@@ -21,6 +21,10 @@ paths:
           name: id
           required: true
           type: integer
+        - in : query
+          name: mode
+          required: false
+          type: string
       responses:
         "200":
           description: Informations du cours
@@ -70,7 +74,7 @@ paths:
         "204":
           description: Cours supprimé
 
-  /cours/{id}/fichier:
+  /cours/{id}/fichier/{idFichier}:
     get:
       tags:
         - Contenu de cours
@@ -80,10 +84,10 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
+        - in: path
+          name: idFichier
           required: true
-          type: string
+          type: integer
       responses:
         "200":
           description: Fichier retourné
@@ -97,10 +101,10 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
+        - in: path
+          name: idFichier
           required: true
-          type: string
+          type: integer
       requestBody:
         required: true
         content:
@@ -126,15 +130,15 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
+        - in: path
+          name: idFichier
           required: true
-          type: string
+          type: integer
       responses:
         "204":
           description: Fichier supprimé
 
-  /cours/{id}/dossier:
+  /cours/{id}/dossier/{idDossier}:
     get:
       tags:
         - Contenu de cours
@@ -144,10 +148,10 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
+        - in: path
+          name: idDossier
           required: true
-          type: string
+          type: integer
       responses:
         "200":
           description: Contenu JSON du dossier
@@ -161,10 +165,10 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
+        - in: path
+          name: idDossier
           required: true
-          type: string
+          type: integer
       requestBody:
         required: true
         content:
@@ -187,27 +191,13 @@ paths:
           name: id
           required: true
           type: integer
-        - in: query
-          name: chemin
-          required: true
-          type: string
-      responses:
-        "204":
-          description: Dossier supprimé
-
-  /cours/{id}/seances:
-    get:
-      tags:
-        - seances
-      summary: Retourne la liste des séances
-      parameters:
         - in: path
-          name: id
+          name: idDossier
           required: true
           type: integer
       responses:
-        "200":
-          description: Liste des séances
+        "204":
+          description: Dossier supprimé
 
   /cours/{id}/seances/{idSeance}:
     get:
