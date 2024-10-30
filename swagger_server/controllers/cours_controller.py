@@ -47,9 +47,9 @@ def cours_id_delete(id):  # noqa: E501
             data.remove(cours)
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
-            return "Cours supprimé"
+            return "Cours deleted"
     
-    return "Cours non trouvé"
+    return "Cours not found", 400
 
 
 def cours_id_get(id, mode=None):  # noqa: E501
@@ -88,7 +88,7 @@ def cours_id_get(id, mode=None):  # noqa: E501
 
             return tmp
     
-    return "Cours non trouvé"
+    return "Cours not found", 400
 
 
 def cours_id_post(id):  # noqa: E501
@@ -125,4 +125,4 @@ def cours_id_post(id):  # noqa: E501
     with open('swagger_server/cours.json', 'w') as file:
         json.dump(data, file, indent=4)
     
-    return "Cours ajouté"
+    return "Cours created"

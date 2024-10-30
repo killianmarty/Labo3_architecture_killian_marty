@@ -26,8 +26,8 @@ def cours_id_seances_id_seance_delete(id, idSeance):  # noqa: E501
                     cours["seances"].remove(seance)
                     with open('swagger_server/cours.json', 'w') as file:
                         json.dump(data, file, indent=4)
-                    return "Seance supprimée"
-    return "Seance not found"
+                    return "Seance deleted"
+    return "Seance not found", 400
 
 
 def cours_id_seances_id_seance_get(id, idSeance):  # noqa: E501
@@ -50,7 +50,7 @@ def cours_id_seances_id_seance_get(id, idSeance):  # noqa: E501
             for seance in cours["seances"]:
                 if(seance["id"] == idSeance):
                     return seance
-    return "Seance not found"
+    return "Seance not found", 400
 
 
 def cours_id_seances_id_seance_post(id, idSeance):  # noqa: E501
