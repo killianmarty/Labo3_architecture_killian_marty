@@ -39,9 +39,11 @@ def cours_id_dossier_id_dossier_delete(id, idDossier):  # noqa: E501
 
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
-            return 'Dossier supprimé'
+            return 'Directory deleted'
+        
+        return "Directory not found", 400
 
-    return 'Dossier not found'
+    return 'Dossier not found', 400
 
 
 def cours_id_dossier_id_dossier_get(id, idDossier):  # noqa: E501
@@ -76,7 +78,9 @@ def cours_id_dossier_id_dossier_get(id, idDossier):  # noqa: E501
                 if(fichier['idParent']==idDossier):
                     result['fichiers'].append(fichier)
 
-    return 'Dossier not found'
+            return result
+
+    return 'Cours not found', 400
 
 
 def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
@@ -99,7 +103,7 @@ def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
         if(cours["id"] == id):
             for dossier in cours["dossiers"]:
                 if(dossier["id"] == idDossier):
-                    return "Directory already exists"
+                    return "Directory already exists", 400
             
             obj = {
                 "id": idDossier,
@@ -112,7 +116,7 @@ def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
                     if(dossier["id"] == body["idParent"]):
                         obj["chemin"] = dossier["chemin"] + "/" + body["titre"]
                         break
-                    return "Dossier parent inexistant"
+                    return "Parent folder does not exists", 400
             else:
                 obj["chemin"] = "/" + body["titre"]
 
@@ -120,9 +124,9 @@ def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
 
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
-            return 'Dossier crée'
+            return 'Directory created'
     
-    return 'Cours non trouvé'
+    return "Cours not found", 400
 
 
 def cours_id_fichier_id_fichier_delete(id, idFichier):  # noqa: E501
@@ -153,9 +157,9 @@ def cours_id_fichier_id_fichier_delete(id, idFichier):  # noqa: E501
 
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
-            return 'Fichier supprimé'
+            return 'File deleted'
 
-    return 'Fichier not found'
+    return 'File not found', 400
 
 
 def cours_id_fichier_id_fichier_get(id, idFichier):  # noqa: E501
@@ -179,7 +183,7 @@ def cours_id_fichier_id_fichier_get(id, idFichier):  # noqa: E501
                 if fichier['id'] == idFichier:
                     return fichier
 
-    return 'Fichier not found'
+    return "File not found", 400
 
 
 def cours_id_fichier_id_fichier_post(id, idFichier):  # noqa: E501
@@ -202,7 +206,7 @@ def cours_id_fichier_id_fichier_post(id, idFichier):  # noqa: E501
         if(cours["id"] == id):
             for fichier in cours["fichiers"]:
                 if(fichier["id"] == idFichier):
-                    return "File already exists"
+                    return "File already exists", 400
             
             obj = {
                 "id": idFichier,
@@ -216,7 +220,7 @@ def cours_id_fichier_id_fichier_post(id, idFichier):  # noqa: E501
                     if(dossier["id"] == body["idParent"]):
                         obj["chemin"] = dossier["chemin"] + "/" + body["titre"] + "." + body["type"]
                         break
-                    return "Dossier parent inexistant"
+                    return "Parent directory does not exists", 400
             else:
                 obj["chemin"] = "/" + body["titre"] + "." + body["type"]
 
@@ -224,6 +228,6 @@ def cours_id_fichier_id_fichier_post(id, idFichier):  # noqa: E501
 
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
-            return 'Fichier crée'
+            return 'File created'
     
-    return 'Cours non trouvé'
+    return "Cours not found", 400
