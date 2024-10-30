@@ -91,7 +91,38 @@ def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
 
     :rtype: None
     """
-    return 'do some magic!'
+    body = connexion.request.get_json()
+    with open('swagger_server/cours.json', 'r') as file:
+        data = json.load(file)
+
+    for cours in data:
+        if(cours["id"] == id):
+            for dossier in cours["dossiers"]:
+                if(dossier["id"] == idDossier):
+                    return "Directory already exists"
+            
+            obj = {
+                "id": idDossier,
+                "titre": body["titre"],
+                "idParent": body["idParent"]
+            }
+
+            if(body["idParent"] != 0):
+                for dossier in cours["dossiers"]:
+                    if(dossier["id"] == body["idParent"]):
+                        obj["chemin"] = dossier["chemin"] + "/" + body["titre"]
+                        break
+                    return "Dossier parent inexistant"
+            else:
+                obj["chemin"] = "/" + body["titre"]
+
+            cours["dossiers"].append(obj)
+
+            with open('swagger_server/cours.json', 'w') as file:
+                json.dump(data, file, indent=4)
+            return 'Dossier crée'
+    
+    return 'Cours non trouvé'
 
 
 def cours_id_fichier_id_fichier_delete(id, idFichier):  # noqa: E501
@@ -163,4 +194,36 @@ def cours_id_fichier_id_fichier_post(id, idFichier):  # noqa: E501
 
     :rtype: None
     """
-    return 'do some magic!'
+    body = connexion.request.get_json()
+    with open('swagger_server/cours.json', 'r') as file:
+        data = json.load(file)
+
+    for cours in data:
+        if(cours["id"] == id):
+            for fichier in cours["fichiers"]:
+                if(fichier["id"] == idFichier):
+                    return "File already exists"
+            
+            obj = {
+                "id": idFichier,
+                "titre": body["titre"],
+                "type": body["type"],
+                "idParent": body["idParent"]
+            }
+
+            if(body["idParent"] != 0):
+                for dossier in cours["dossiers"]:
+                    if(dossier["id"] == body["idParent"]):
+                        obj["chemin"] = dossier["chemin"] + "/" + body["titre"] + "." + body["type"]
+                        break
+                    return "Dossier parent inexistant"
+            else:
+                obj["chemin"] = "/" + body["titre"] + "." + body["type"]
+
+            cours["fichiers"].append(obj)
+
+            with open('swagger_server/cours.json', 'w') as file:
+                json.dump(data, file, indent=4)
+            return 'Fichier crée'
+    
+    return 'Cours non trouvé'
