@@ -25,11 +25,15 @@ def cours_id_dossier_id_dossier_delete(id, idDossier):  # noqa: E501
                 if fichier['idParent'] == idDossier:
                     cours_id_fichier_id_fichier_delete(id, fichier['id'])
 
-            for dossier in cours['dosssiers']:
-                if dossier['parentId'] == idDossier:
+            #reload file
+            with open('swagger_server/cours.json', 'r') as file:
+                data = json.load(file)
+
+            for dossier in cours['dossiers']:
+                if dossier['idParent'] == idDossier:
                     cours_id_dossier_id_dossier_delete(id, dossier['id'])
 
-            for dossier in cours['dosssiers']:
+            for dossier in cours['dossiers']:
                 if dossier['id'] == idDossier:
                     cours['dossiers'].remove(dossier)
 

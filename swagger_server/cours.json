@@ -71,13 +71,18 @@
                 "titre": "Cours 2",
                 "type": "pdf",
                 "chemin": "http://example.com/physique_cours2.pdf",
-                "idParent": 2
+                "idParent": 3
             }
         ],
         "dossiers": [
             {
                 "id": 2,
                 "titre": "Exercices",
+                "idParent": 0
+            },
+            {
+                "id": 3,
+                "titre": "Examens",
                 "idParent": 0
             }
         ],

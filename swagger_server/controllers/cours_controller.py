@@ -44,7 +44,7 @@ def cours_id_delete(id):  # noqa: E501
     
     for cours in data:
         if cours['id'] == id:
-            data['cours'].remove(cours)
+            data.remove(cours)
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
             return "Cours supprimé"
