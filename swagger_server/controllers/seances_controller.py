@@ -16,9 +16,8 @@ def cours_id_seances_id_seance_delete(id, idSeance):  # noqa: E501
 
     :rtype: None
     """
-
     # Load the existing data from the JSON file
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
 
     # Find the course with the given id
@@ -33,7 +32,7 @@ def cours_id_seances_id_seance_delete(id, idSeance):  # noqa: E501
             course['seances'].remove(seance)
             
             # Save the updated data back to the JSON file
-            with open('../cours.json', 'w') as file:
+            with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
             return 'Seance deleted'
         else:
@@ -55,7 +54,7 @@ def cours_id_seances_id_seance_get(id, idSeance):  # noqa: E501
     :rtype: None
     """
     # Load the existing data from the JSON file
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
 
     # Find the course with the given id

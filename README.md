@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 *CoursApi* | [**cours_id_delete**](docs/CoursApi.md#cours_id_delete) | **DELETE** /cours/{id} | Supprime un cours
 *CoursApi* | [**cours_id_get**](docs/CoursApi.md#cours_id_get) | **GET** /cours/{id} | Retourne les informations du cours
 *CoursApi* | [**cours_id_post**](docs/CoursApi.md#cours_id_post) | **POST** /cours/{id} | Crée un nouveau cours
-*RechercheDeCoursApi* | [**search_tag_get**](docs/RechercheDeCoursApi.md#search_tag_get) | **GET** /search/{tag} | Recherche de cours par tag
+*RechercheDeCoursApi* | [**search_get**](docs/RechercheDeCoursApi.md#search_get) | **GET** /search | Recherche de cours par tag
 *SeancesApi* | [**cours_id_seances_id_seance_delete**](docs/SeancesApi.md#cours_id_seances_id_seance_delete) | **DELETE** /cours/{id}/seances/{idSeance} | Supprime une séance
 *SeancesApi* | [**cours_id_seances_id_seance_get**](docs/SeancesApi.md#cours_id_seances_id_seance_get) | **GET** /cours/{id}/seances/{idSeance} | Retourne les infos sur la séance
 *SeancesApi* | [**cours_id_seances_id_seance_post**](docs/SeancesApi.md#cours_id_seances_id_seance_post) | **POST** /cours/{id}/seances/{idSeance} | Crée une nouvelle séance

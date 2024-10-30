@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search_tag_get**](RechercheDeCoursApi.md#search_tag_get) | **GET** /search/{tag} | Recherche de cours par tag
+[**search_get**](RechercheDeCoursApi.md#search_get) | **GET** /search | Recherche de cours par tag
 
 
-# **search_tag_get**
-> search_tag_get(tag, mode=mode)
+# **search_get**
+> search_get(tag)
 
 Recherche de cours par tag
 
@@ -23,13 +23,12 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.RechercheDeCoursApi()
 tag = 'tag_example' # str | 
-mode = 'mode_example' # str |  (optional)
 
 try:
     # Recherche de cours par tag
-    api_instance.search_tag_get(tag, mode=mode)
+    api_instance.search_get(tag)
 except ApiException as e:
-    print("Exception when calling RechercheDeCoursApi->search_tag_get: %s\n" % e)
+    print("Exception when calling RechercheDeCoursApi->search_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -37,7 +36,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **str**|  | 
- **mode** | **str**|  | [optional] 
 
 ### Return type
 

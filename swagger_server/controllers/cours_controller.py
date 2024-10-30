@@ -12,7 +12,7 @@ def cours_get():  # noqa: E501
 
     :rtype: None
     """
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
 
     return data
@@ -28,13 +28,13 @@ def cours_id_delete(id):  # noqa: E501
 
     :rtype: None
     """
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
-    for cours in data['cours']:
+    for cours in data:
         if cours['id'] == id:
             data['cours'].remove(cours)
-            with open('../cours.json', 'w') as file:
+            with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
             return "Cours supprimé"
     
@@ -53,10 +53,10 @@ def cours_id_get(id, mode=None):  # noqa: E501
 
     :rtype: None
     """
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
-    for cours in data['cours']:
+    for cours in data:
         if cours['id'] == id:
             return cours
     
@@ -75,12 +75,12 @@ def cours_id_post(id):  # noqa: E501
     """
     new_cours = connexion.request.get_json()
     
-    with open('../cours.json', 'r') as file:
+    with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
-    data['cours'].append(new_cours)
+    data.append(new_cours)
     
-    with open('../cours.json', 'w') as file:
+    with open('swagger_server/cours.json', 'w') as file:
         json.dump(data, file, indent=4)
     
     return "Cours ajouté"

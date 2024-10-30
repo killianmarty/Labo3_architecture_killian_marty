@@ -25,7 +25,8 @@
             {
                 "id": 1,
                 "titre": "Exercices",
-                "fichiers": [1, 2]
+                "fichiers": [1, 2],
+                "idParent": 0
             }
         ],
 

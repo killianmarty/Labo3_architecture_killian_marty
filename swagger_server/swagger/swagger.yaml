@@ -227,20 +227,16 @@ paths:
         "204":
           description: "Séance supprimée"
       x-swagger-router-controller: "swagger_server.controllers.seances_controller"
-  /search/{tag}:
+  /search:
     get:
       tags:
       - "Recherche de cours"
       summary: "Recherche de cours par tag"
-      operationId: "search_tag_get"
+      operationId: "search_get"
       parameters:
       - name: "tag"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "mode"
         in: "query"
-        required: false
+        required: true
         type: "string"
       responses:
         "200":

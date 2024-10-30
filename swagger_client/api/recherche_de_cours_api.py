@@ -33,45 +33,43 @@ class RechercheDeCoursApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def search_tag_get(self, tag, **kwargs):  # noqa: E501
+    def search_get(self, tag, **kwargs):  # noqa: E501
         """Recherche de cours par tag  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_tag_get(tag, async_req=True)
+        >>> thread = api.search_get(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str tag: (required)
-        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_tag_get_with_http_info(tag, **kwargs)  # noqa: E501
+            return self.search_get_with_http_info(tag, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_tag_get_with_http_info(tag, **kwargs)  # noqa: E501
+            (data) = self.search_get_with_http_info(tag, **kwargs)  # noqa: E501
             return data
 
-    def search_tag_get_with_http_info(self, tag, **kwargs):  # noqa: E501
+    def search_get_with_http_info(self, tag, **kwargs):  # noqa: E501
         """Recherche de cours par tag  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_tag_get_with_http_info(tag, async_req=True)
+        >>> thread = api.search_get_with_http_info(tag, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str tag: (required)
-        :param str mode:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['tag', 'mode']  # noqa: E501
+        all_params = ['tag']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -82,24 +80,22 @@ class RechercheDeCoursApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_tag_get" % key
+                    " to method search_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tag' is set
         if ('tag' not in params or
                 params['tag'] is None):
-            raise ValueError("Missing the required parameter `tag` when calling `search_tag_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tag` when calling `search_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'tag' in params:
-            path_params['tag'] = params['tag']  # noqa: E501
 
         query_params = []
-        if 'mode' in params:
-            query_params.append(('mode', params['mode']))  # noqa: E501
+        if 'tag' in params:
+            query_params.append(('tag', params['tag']))  # noqa: E501
 
         header_params = {}
 
@@ -111,7 +107,7 @@ class RechercheDeCoursApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/search/{tag}', 'GET',
+            '/search', 'GET',
             path_params,
             query_params,
             header_params,

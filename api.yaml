@@ -262,19 +262,15 @@ paths:
         "204":
           description: Séance supprimée
 
-  /search/{tag}:
+  /search:
     get:
       tags:
         - Recherche de cours
       summary: Recherche de cours par tag
       parameters:
-        - in: path
+        - in: query
           name: tag
           required: true
-          type: string
-        - in: query
-          name: mode
-          required: false
           type: string
       responses:
         "200":
