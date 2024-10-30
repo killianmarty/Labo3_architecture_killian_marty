@@ -101,12 +101,26 @@ def cours_id_post(id):  # noqa: E501
 
     :rtype: None
     """
-    new_cours = connexion.request.get_json()
+    body = connexion.request.get_json()
     
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
-    data.append(new_cours)
+    obj = {
+        "id": id,
+        "name": body["name"],
+        "discipline": body["discipline"],
+        "tags": body["tags"],
+        "seances": [],
+        "fichiers": [],
+        "dossiers": []
+    }
+
+    for cours in data:
+        if cours["id"] == id:
+            return "Cours already exists", 400
+    
+    data.append(obj)
     
     with open('swagger_server/cours.json', 'w') as file:
         json.dump(data, file, indent=4)

@@ -65,4 +65,27 @@ def cours_id_seances_id_seance_post(id, idSeance):  # noqa: E501
 
     :rtype: None
     """
-    return 'do some magic!'
+    body = connexion.request.get_json()
+    
+    with open('swagger_server/cours.json', 'r') as file:
+        data = json.load(file)
+    
+    obj = {
+        "id": idSeance,
+        "semaine": body["semaine"],
+        "titre": body["titre"],
+        "thematique": body["thematique"],
+        "fichiers": body["fichiers"]
+    }
+
+    for cours in data:
+        if cours["id"] == id:
+            for seance in cours["seances"]:
+                if seance["id"] == idSeance:
+                    return "Seance already exists", 400
+            cours["seances"].append(obj)
+            with open('swagger_server/cours.json', 'w') as file:
+                json.dump(data, file, indent=4)
+            return "Seance created"
+    return "Cours not found", 400
+    
