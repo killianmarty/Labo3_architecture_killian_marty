@@ -60,8 +60,8 @@ def cours_id_dossier_id_dossier_get(id, idDossier):  # noqa: E501
         data = json.load(file)
     
     result = {
-        dossiers: [],
-        fichiers: []
+        "dossiers": [],
+        "fichiers": []
     }
     for cours in data:
         if cours['id'] == id:
