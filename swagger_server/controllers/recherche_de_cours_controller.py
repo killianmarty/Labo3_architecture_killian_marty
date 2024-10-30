@@ -21,8 +21,14 @@ def search_get(tag):  # noqa: E501
     courses = load_courses()
 
     result = []
-    for course in courses:
-        if tag in course['tags']:
-           result.append(course)
+    for cours in courses:
+        if tag in cours['tags']:
+            obj = {
+                "id": cours["id"],
+                "name": cours["name"],
+                "discipline": cours["discipline"],
+                "tags": cours["tags"]
+            }
+            result.append(obj)
 
     return result

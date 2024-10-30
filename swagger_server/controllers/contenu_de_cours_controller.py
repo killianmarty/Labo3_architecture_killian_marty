@@ -24,9 +24,15 @@ def cours_id_dossier_id_dossier_delete(id, idDossier):  # noqa: E501
             for fichier in cours['fichiers']:
                 if fichier['idParent'] == idDossier:
                     cours_id_fichier_id_fichier_delete(id, fichier['id'])
+
+            for dossier in cours['dosssiers']:
+                if dossier['parentId'] == idDossier:
+                    cours_id_dossier_id_dossier_delete(id, dossier['id'])
+
             for dossier in cours['dosssiers']:
                 if dossier['id'] == idDossier:
                     cours['dossiers'].remove(dossier)
+
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
             return 'Dossier supprimé'
@@ -49,12 +55,23 @@ def cours_id_dossier_id_dossier_get(id, idDossier):  # noqa: E501
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
+    result = {
+        dossiers: [],
+        fichiers: []
+    }
     for cours in data:
         if cours['id'] == id:
+
             for dossier in cours['dossiers']:
                 if dossier['id'] == idDossier:
-                    return dossier
-    
+                    result['propriete'] = dossier
+                if(dossier['idParent'] == idDossier):
+                    result['dossiers'].append(dossier)
+
+            for fichier in cours['fichier']:
+                if(fichier['idParent']==idDossier):
+                    result['fichiers'].append(fichier)
+
     return 'Dossier not found'
 
 
@@ -90,15 +107,15 @@ def cours_id_fichier_id_fichier_delete(id, idFichier):  # noqa: E501
 
     for cours in data:
         if cours['id'] == id:
+            
             for fichier in cours['fichiers']:
                 if fichier['id'] == idFichier:
                     cours['fichiers'].remove(fichier)
+
             for seance in cours['seances']:
                 if idFichier in seance['fichiers']:
-                    seance['fichiers'].remove(idFichier) 
-            for dossier in cours['dossiers']:
-                if idFichier in dossier['fichiers']:
-                    dossier['fichiers'].remove(idFichier)
+                    seance['fichiers'].remove(idFichier)
+
             with open('swagger_server/cours.json', 'w') as file:
                 json.dump(data, file, indent=4)
             return 'Fichier supprimé'

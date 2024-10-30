@@ -3,6 +3,7 @@ import six
 
 from swagger_server import util
 import json
+import copy
 
 def cours_get():  # noqa: E501
     """Retourne la liste des cours
@@ -15,7 +16,17 @@ def cours_get():  # noqa: E501
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
 
-    return data
+    result = []
+    for cours in data:
+        obj = {
+            "id": cours["id"],
+            "name": cours["name"],
+            "discipline": cours["discipline"],
+            "tags": cours["tags"]
+        }
+        result.append(obj)
+
+    return result
 
 
 def cours_id_delete(id):  # noqa: E501
@@ -53,12 +64,29 @@ def cours_id_get(id, mode=None):  # noqa: E501
 
     :rtype: None
     """
+    # Par défaut le mode est "semaine"
+
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
     
     for cours in data:
         if cours['id'] == id:
-            return cours
+            tmp = copy.deepcopy(cours)
+            tmp.pop("fichiers")
+            tmp.pop("dossiers")
+            tmp["seances"] = {}
+            if(mode == "module"):
+                for seance in cours["seances"]:
+                    if(not seance["thematique"] in tmp["seances"]):
+                        tmp["seances"][seance["thematique"]] = []
+                    tmp["seances"][seance["thematique"]].append(seance)
+            else:
+                for seance in cours["seances"]:
+                    if(not ("semaine " + str(seance["semaine"])) in tmp["seances"]):
+                        tmp["seances"]["semaine " + str(seance["semaine"])] = []
+                    tmp["seances"]["semaine " + str(seance["semaine"])].append(seance)
+
+            return tmp
     
     return "Cours non trouvé"
 

@@ -10,14 +10,14 @@
                 "id": 1,
                 "titre": "Cours 1",
                 "type": "pdf",
-                "url": "http://example.com/cours1.pdf",
+                "chemin": "http://example.com/cours1.pdf",
                 "idParent": 1
             },
             {
                 "id": 2,
                 "titre": "Cours 2",
                 "type": "pdf",
-                "url": "http://example.com/cours2.pdf",
+                "chemin": "http://example.com/cours2.pdf",
                 "idParent": 1
             }
         ],
@@ -25,7 +25,6 @@
             {
                 "id": 1,
                 "titre": "Exercices",
-                "fichiers": [1, 2],
                 "idParent": 0
             }
         ],
@@ -51,6 +50,96 @@
                 "titre" : "Les fonctions",
                 "thematique": "Les fonctions, les limites",
                 "fichiers" : [1]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Physique",
+        "discipline": "Physique",
+        "tags": ["Physique", "Mécanique", "Thermodynamique"],
+        "fichiers": [
+            {
+                "id": 3,
+                "titre": "Cours 1",
+                "type": "pdf",
+                "chemin": "http://example.com/physique_cours1.pdf",
+                "idParent": 2
+            },
+            {
+                "id": 4,
+                "titre": "Cours 2",
+                "type": "pdf",
+                "chemin": "http://example.com/physique_cours2.pdf",
+                "idParent": 2
+            }
+        ],
+        "dossiers": [
+            {
+                "id": 2,
+                "titre": "Exercices",
+                "idParent": 0
+            }
+        ],
+        "seances": [
+            {
+                "id": 4,
+                "semaine": 1,
+                "titre": "Introduction à la physique",
+                "thematique": "Principes fondamentaux de la physique",
+                "fichiers": [3, 4]
+            },
+            {
+                "id": 5,
+                "semaine": 2,
+                "titre": "Mécanique",
+                "thematique": "Lois du mouvement et forces",
+                "fichiers": [3]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Chimie",
+        "discipline": "Chimie",
+        "tags": ["Chimie", "Organique", "Inorganique"],
+        "fichiers": [
+            {
+                "id": 5,
+                "titre": "Cours 1",
+                "type": "pdf",
+                "chemin": "http://example.com/chimie_cours1.pdf",
+                "idParent": 3
+            },
+            {
+                "id": 6,
+                "titre": "Cours 2",
+                "type": "pdf",
+                "chemin": "http://example.com/chimie_cours2.pdf",
+                "idParent": 3
+            }
+        ],
+        "dossiers": [
+            {
+                "id": 3,
+                "titre": "Exercices",
+                "idParent": 0
+            }
+        ],
+        "seances": [
+            {
+                "id": 6,
+                "semaine": 1,
+                "titre": "Introduction à la chimie",
+                "thematique": "Concepts de base et classification des substances",
+                "fichiers": [5, 6]
+            },
+            {
+                "id": 7,
+                "semaine": 2,
+                "titre": "Chimie organique",
+                "thematique": "Structures et réactions des composés organiques",
+                "fichiers": [5]
             }
         ]
     }
