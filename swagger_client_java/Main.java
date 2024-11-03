@@ -16,7 +16,7 @@ public class Main {
             System.out.print("Quelle action voulez vous acccomplir: ? \n 1- Consulter une ressource \n 2- Ajouter une ressource \n 3- Supprimer une ressource ");
             String action = scanner.nextLine();
             while (!action.equals("1") && !action.equals("2") && !action.equals("3")) {
-                System.out.println("Veuillez entrer une action valide ");
+                System.out.print("Quelle action voulez vous acccomplir: ? \n 1- Consulter une ressource \n 2- Ajouter une ressource \n 3- Supprimer une ressource ");
                 action = scanner.nextLine();
             }
 
@@ -31,10 +31,10 @@ public class Main {
 
             try {
                 if (methode.equals("GET")) {
-                    System.out.print("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ");
+                    System.out.print("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n 6- Rechercher un cours par tag\n ");
                     String option = scanner.nextLine();
-                    while (!option.equals("1") && !option.equals("2") && !option.equals("3") && !option.equals("4") && !option.equals("5")) {
-                        System.out.println("Veuillez entrer une ressource valide ");
+                    while (!option.equals("1") && !option.equals("2") && !option.equals("3") && !option.equals("4") && !option.equals("5") && !option.equals("6")) {
+                        System.out.print("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n 6- Rechercher un cours par tag\n ");
                         option = scanner.nextLine();
                     }
 
@@ -49,6 +49,7 @@ public class Main {
                         String mode = scanner.nextLine();
                         while (!mode.equals("1") && !mode.equals("2")) {
                             System.out.println("Veuillez entrer un mode valide ");
+                            System.out.print("Sous quel mode voulez vous visualisez: \n 1- Semaine \n 2- Module\n");
                             mode = scanner.nextLine();
                         }
                         String modem = mode.equals("1") ? "semaine" : "module";
@@ -71,6 +72,10 @@ public class Main {
                         System.out.print("Veuillez entrer l'id de la séance : ");
                         String id_2 = scanner.nextLine();
                         ressource = "/cours/" + id + "/seances/" + id_2;
+                    } else if (option.equals("6")) {
+                        System.out.print("Veuillez entrer le tag : ");
+                        String tag = scanner.nextLine();
+                        ressource = "/search?tag=" + tag;
                     }
 
                     HttpRequest request = HttpRequest.newBuilder()

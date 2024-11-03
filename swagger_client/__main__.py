@@ -15,11 +15,11 @@ while True:
 
     if methode == "GET":
         
-        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
+        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n 6- Rechercher un cours par tag\n ")
         
-        while option not in ['1', '2', '3','4','5']: 
+        while option not in ['1', '2', '3','4','5', '6']: 
             print("Veuillez entrer une ressource valide ")
-            option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
+            option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n 6- Rechercher un cours par tag\n ")
         
         if option == '1':
             ressource = "/cours"
@@ -52,6 +52,10 @@ while True:
             id_2 = str(input("Veuillez entrer l'id de la séance : "))
             ressource = "/cours/"+id+"/seances/" + id_2
             reponse = requests.get( url + ressource) 
+        elif option =='6':
+            tag = input("Veuillez entrer le tag: ")
+            ressource = "/search?tag="+ tag
+            reponse = requests.get( url + ressource)
         
         print(reponse.text)
 
