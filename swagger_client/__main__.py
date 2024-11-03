@@ -1,4 +1,4 @@
-import requests  
+import requests 
 
 url = input("Veuillez entrer l'url et le port: ")
 while True: 
