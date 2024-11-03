@@ -62,13 +62,13 @@ start nginx.exe
 ### Python
 
 ```bash
-python -m swagger_server
+python -m swagger_client
 ```
 
 ### Java
 
 ```bash
-cd swagger_server_java
+cd swagger_client_java
 javac Main.java
 java Main
 ```
@@ -123,4 +123,6 @@ Puis le serveur renvoie un objet "ApiResponse" qui contient la réponse à renvo
 
 ## Ce que nous avons appris
 
-Ce laboratoire nous a permis d'apprendre à conçevoir et créer une API avec swagger et à la générer avec swagger-codegen-cli.
+Ce laboratoire nous a permis d'apprendre à conçevoir et créer une API avec swagger et à générer un client et un serveur avec swagger-codegen-cli.
+
+Mais nous avons aussi appris à utiliser les environnements virtuels Python, et à lancer le serveur derrière un load balancer.
