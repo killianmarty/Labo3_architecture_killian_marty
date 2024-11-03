@@ -2,10 +2,10 @@ import requests
 
 url = input("Veuillez entrer l'url et le port: ")
 while True: 
-    action = input("Quelle action voulez vous acccomplir: ? \n 1-Consulter une ressource \n 2-Ajouter une ressource \n 3- Supprimer une ressource ")
+    action = input("Quelle action voulez vous acccomplir: ? \n 1- Consulter une ressource \n 2- Ajouter une ressource \n 3- Supprimer une ressource ")
     while action not in ['1', '2', '3']: 
         print("Veuillez entrer une action valide ")
-        action = input("Quelle action voulez vous acccomplir: ? \n 1-Consulter une ressource \n 2-Ajouter une ressource \n 3- Supprimer une ressource ")
+        action = input("Quelle action voulez vous acccomplir: ? \n 1- Consulter une ressource \n 2- Ajouter une ressource \n 3- Supprimer une ressource ")
     if action == '1': 
         methode = "GET"
     elif action =='2':
@@ -56,9 +56,9 @@ while True:
         print(reponse.text)
 
     elif methode == "POST":
-        option = input("Quelle ressource voulez vous ajouter : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier  dans un cours \n 4 -Une séance dans un cours\n ")
+        option = input("Quelle ressource voulez vous ajouter : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier dans un cours \n 4- Une séance dans un cours\n ")
         while option not in ['1', '2', '3','4','5']: 
-            print("Veuillez entrer une ressource valide ")
+            option = input("Quelle ressource voulez vous ajouter : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier dans un cours \n 4- Une séance dans un cours\n ")
         if option == '1':
             id = str(input("Veuillez entrer l'id du cours : "))
             cles = ['discipline', 'name']
@@ -108,26 +108,33 @@ while True:
                 value = input(f"Entrez la valeur pour '{cle}': ")
                 data[cle] = value
             data['fichiers'] = [int(fichier) for fichier in input("Entrez les id des fichiers séparés par des espaces: ").split()]
+            data['semaine'] = int(data['semaine'])
             reponse = requests.post(url +"/cours/"+id +"/seances/" + id_2 , json=data)
             print(reponse.text) 
 
     elif methode =="DELETE":
-        option = input("Quelle ressource voulez vous supprimer : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier  dans un cours \n 4 -Une séance dans un cours ")
+        option = input("Quelle ressource voulez vous supprimer : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier dans un cours \n 4- Une séance dans un cours ")
+        while option not in ['1', '2', '3','4']: 
+            option = input("Quelle ressource voulez vous supprimer : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier dans un cours \n 4- Une séance dans un cours ")
         if option == '1':
             id = str(input("Veuillez entrer l'id du cours : "))
             reponse = requests.delete(url +"/cours/"+id )    
+            print(reponse.text) 
         elif option =='2':
             id = str(input("Veuillez entrer l'id du cours : "))
             id_2 = str(input("Veuillez entrer l'id du fichier : "))
             reponse = requests.delete(url +"/cours/"+id +"/fichier/" + id_2 )
+            print(reponse.text) 
         elif option =='3':
             id = str(input("Veuillez entrer l'id du cours : "))
             id_2 = str(input("Veuillez entrer l'id du dossier : "))
             reponse = requests.delete(url +"/cours/"+id +"/dossier/" + id_2 )
+            print(reponse.text) 
         elif option =='4':
             id = str(input("Veuillez entrer l'id du cours : "))
             id_2 = str(input("Veuillez entrer l'id de la séance : "))
             reponse = requests.delete(url +"/cours/"+id +"/seances/" + id_2 )
+            print(reponse.text) 
 
     refaire = input("Voulez-vous faire une autre opération ? (oui/non) : ").strip().lower()
     if refaire != 'oui':

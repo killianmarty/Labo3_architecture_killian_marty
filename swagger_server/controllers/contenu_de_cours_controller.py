@@ -18,7 +18,6 @@ def cours_id_dossier_id_dossier_delete(id, idDossier):  # noqa: E501
     """
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
-
     for cours in data:
         if cours['id'] == id:
             for fichier in cours['fichiers']:
@@ -29,17 +28,18 @@ def cours_id_dossier_id_dossier_delete(id, idDossier):  # noqa: E501
             with open('swagger_server/cours.json', 'r') as file:
                 data = json.load(file)
 
-            for dossier in cours['dossiers']:
-                if dossier['idParent'] == idDossier:
-                    cours_id_dossier_id_dossier_delete(id, dossier['id'])
+            for cours in data:
+                if cours['id'] == id:
+                    for dossier in cours['dossiers']:
+                        if dossier['idParent'] == idDossier:
+                            cours_id_dossier_id_dossier_delete(id, dossier['id'])
+                    for dossier in cours['dossiers']:
+                        if dossier['id'] == idDossier:
+                            cours['dossiers'].remove(dossier)
 
-            for dossier in cours['dossiers']:
-                if dossier['id'] == idDossier:
-                    cours['dossiers'].remove(dossier)
-
-            with open('swagger_server/cours.json', 'w') as file:
-                json.dump(data, file, indent=4)
-            return 'Directory deleted'
+                            with open('swagger_server/cours.json', 'w') as file:
+                                json.dump(data, file, indent=4)
+                            return 'Directory deleted'
         
         return "Directory not found", 400
 
@@ -146,7 +146,6 @@ def cours_id_fichier_id_fichier_delete(id, idFichier):  # noqa: E501
     """
     with open('swagger_server/cours.json', 'r') as file:
         data = json.load(file)
-
     for cours in data:
         if cours['id'] == id:
             
