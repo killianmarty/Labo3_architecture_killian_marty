@@ -37,7 +37,16 @@ python -m swagger_server
 
 ### Python
 
+```bash
+python -m swagger_server
+```
+
 ### Java
 
+```bash
+cd swagger_server_java
+javac Main.java
+java Main
+```
 
 
