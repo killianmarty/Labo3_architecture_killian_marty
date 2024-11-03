@@ -15,11 +15,11 @@ while True:
 
     if methode == "GET":
         
-        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n5- Une séance spécifique d'un cours ")
+        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
         
         while option not in ['1', '2', '3','4','5']: 
             print("Veuillez entrer une ressource valide ")
-            option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n5- Une séance spécifique d'un cours ")
+            option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
         
         if option == '1':
             ressource = "/cours"
@@ -27,10 +27,10 @@ while True:
         elif option =='2':
             id = str(input("Veuillez entrer l'id du cours : "))
             ressource = "/cours/"+ id
-            mode = input("Sous quel mode voulez vous visualisez: \n 1- Semaine \n 2- Module")
+            mode = input("Sous quel mode voulez vous visualisez: \n 1- Semaine \n 2- Module\n")
             while mode not in ['1', '2']: 
                 print("Veuillez entrer un mode valide ")
-                mode = input("Sous quel mode voulez vous visualisez: \n 1- Semaine \n 2- Module")
+                mode = input("Sous quel mode voulez vous visualiser: \n 1- Semaine \n 2- Module\n")
             if mode =='1':
                 modem = 'semaine'
             elif mode =='2':
@@ -45,7 +45,7 @@ while True:
         elif option =='4':
             id = str(input("Veuillez entrer l'id du cours : "))
             id_2 = str(input("Veuillez entrer l'id du dossier : "))
-            ressource = "/cours/"+id+"/dossiers/" + id_2
+            ressource = "/cours/"+id+"/dossier/" + id_2
             reponse = requests.get( url + ressource)
         elif option =='5':
             id = str(input("Veuillez entrer l'id du cours : "))
@@ -56,44 +56,60 @@ while True:
         print(reponse.text)
 
     elif methode == "POST":
-        option = input("Quelle ressource voulez vous ajouter : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier  dans un cours \n 4 -Une séance dans un cours ")
+        option = input("Quelle ressource voulez vous ajouter : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier  dans un cours \n 4 -Une séance dans un cours\n ")
         while option not in ['1', '2', '3','4','5']: 
             print("Veuillez entrer une ressource valide ")
         if option == '1':
             id = str(input("Veuillez entrer l'id du cours : "))
-            cles = ['discipline', 'id', 'name', 'seances']
-            data = {}
+            cles = ['discipline', 'name']
+            data = {
+                'id': int(id)
+            }
             for cle in cles:
                 value = input(f"Entrez la valeur pour '{cle}': ")
                 data[cle] = value
-            reponse = requests.post(url +"/cours/"+id , json=data)    
-        elif option == '3':
-            id = str(input("Veuillez entrer l'id du cours : "))
-            id_2 = str(input("Veuillez entrer l'id du dossier : "))
-            cles = ['id', 'titre', 'idParent', 'chemin']
-            data = {}
-            for cle in cles:
-                value = input(f"Entrez la valeur pour '{cle}': ")
-                data[cle] = value
-            reponse = requests.post(url +"/cours/"+id +"/dossiers/" + id_2 , json=data)
-        elif option =='4':
-            id = str(input("Veuillez entrer l'id du cours : "))
-            id_2 = str(input("Veuillez entrer l'id de la séance : "))
-            cles = ['id', 'titre', 'idParent', 'chemin']
-            data = {}
-            for cle in cles:
-                value = input(f"Entrez la valeur pour '{cle}': ")
-                data[cle] = value
-            reponse = requests.post(url +"/cours/"+id +"/seances/" + id_2 , json=data)
+
+            tagStr = input("Entrez les tags séparés par des espaces: ")
+            data['tags'] = [tag for tag in tagStr.split()]
+            reponse = requests.post(url +"/cours/"+id , json=data)
+            print(reponse.text)   
         elif option =='2':
             id = str(input("Veuillez entrer l'id du cours : "))
             id_2 = str(input("Veuillez entrer l'id du fichier : "))
-            cles = ['Chemin', 'id', 'idParent', 'titre','type']
+            cles = ['titre','type']
             data = {}
+            
             for cle in cles:
                 value = input(f"Entrez la valeur pour '{cle}': ")
                 data[cle] = value
+            data['idParent'] = int(input("Veuillez entrer l'id du dossier parent (0 si à la racine) : "))
             reponse = requests.post(url +"/cours/"+id +"/fichier/" + id_2 , json=data)
+            print(reponse.text) 
+        elif option == '3':
+            idCours = str(input("Veuillez entrer l'id du cours : "))
+            idDossier = str(input("Veuillez entrer l'id du nouveau dossier : "))
+            idParent = str(input("Veuillez entrer l'id du dossier parent (0 si à la racine) : "))
+            titre = str(input("Veuillez entrer le titre du dossier : "))
+            cles = ['idDossier', 'titre']
+            data = {
+                'idParent': int(idParent),
+                'titre': titre
+            }
+            reponse = requests.post(url +"/cours/"+idCours +"/dossier/" + idDossier , json=data)
+            print(reponse.text) 
+        elif option =='4':
+            id = str(input("Veuillez entrer l'id du cours : "))
+            id_2 = str(input("Veuillez entrer l'id de la séance : "))
+            cles = ['titre', 'semaine', 'thematique']
+            data = {
+                'id': int(id_2)
+            }
+            for cle in cles:
+                value = input(f"Entrez la valeur pour '{cle}': ")
+                data[cle] = value
+            data['fichiers'] = [int(fichier) for fichier in input("Entrez les id des fichiers séparés par des espaces: ").split()]
+            reponse = requests.post(url +"/cours/"+id +"/seances/" + id_2 , json=data)
+            print(reponse.text) 
 
     elif methode =="DELETE":
         option = input("Quelle ressource voulez vous supprimer : \n 1- Un cours  \n 2- Un fichier dans un cours \n 3- Un dossier  dans un cours \n 4 -Une séance dans un cours ")

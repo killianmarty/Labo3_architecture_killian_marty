@@ -74,7 +74,7 @@ def cours_id_dossier_id_dossier_get(id, idDossier):  # noqa: E501
                 if(dossier['idParent'] == idDossier):
                     result['dossiers'].append(dossier)
 
-            for fichier in cours['fichier']:
+            for fichier in cours['fichiers']:
                 if(fichier['idParent']==idDossier):
                     result['fichiers'].append(fichier)
 
@@ -111,11 +111,14 @@ def cours_id_dossier_id_dossier_post(id, idDossier):  # noqa: E501
                 "idParent": body["idParent"]
             }
 
+            error = True
             if(body["idParent"] != 0):
                 for dossier in cours["dossiers"]:
                     if(dossier["id"] == body["idParent"]):
                         obj["chemin"] = dossier["chemin"] + "/" + body["titre"]
+                        error = False
                         break
+                if(error):
                     return "Parent folder does not exists", 400
             else:
                 obj["chemin"] = "/" + body["titre"]
