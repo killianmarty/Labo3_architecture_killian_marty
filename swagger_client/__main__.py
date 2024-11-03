@@ -15,7 +15,7 @@ while True:
 
     if methode == "GET":
         
-        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3-  Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
+        option = input("Quelle ressource voulez vous consulter : \n 1- Tous les cours \n 2- Un cours specifique \n 3- Un fichier spécifique dans un cours \n 4- Un dossier spécifique dans un cours \n 5- Une séance spécifique d'un cours\n ")
         
         while option not in ['1', '2', '3','4','5']: 
             print("Veuillez entrer une ressource valide ")
