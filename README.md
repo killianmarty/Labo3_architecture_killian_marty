@@ -108,6 +108,12 @@ Le programme proposera ensuite les appels à l'API réalisables.
 | `/cours/:idCours/dossier/:idDossier`       | Ajoute/supprime un dossier dans un cours   |
 | `/cours/:idCours/seances/:idSeance`        | Ajoute/supprime une séance d'un cours      |
 
+## Démonstration
+
+![](demo.mp4)
+
+La vidéo de démonstration est disponible sous le nom de "demo.mp4" dans le repository.
+
 ## Structure du serveur
 
 ![image](diagramme_classe.png)
