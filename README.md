@@ -110,7 +110,7 @@ Le programme proposera ensuite les appels à l'API réalisables.
 
 ## Démonstration
 
-![](demo.mp4)
+https://github.com/user-attachments/assets/25ee5a7f-9fb0-4f12-b881-2002bb955858
 
 La vidéo de démonstration est disponible sous le nom de "demo.mp4" dans le repository.
 
