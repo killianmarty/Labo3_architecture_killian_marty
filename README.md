@@ -44,8 +44,8 @@ Un load balancer NGINX est également à disposition, voici les étapes pour l'u
 Pour cela, modifier le fichier "nginx-windows/conf/ipadresses.conf". Voici un exemple de syntaxe dans ce fichier (le port utilisé part le serveur de l'API est 3000).
 
 ```
-server localhost:3000;
-server 172.151.23.10:3000;
+server 172.16.13.36:3000;
+server 172.16.13.32:3000;
 ```
 
 2. Lancer NGINX
@@ -53,7 +53,7 @@ server 172.151.23.10:3000;
 **Pour lancer NGINX, il est important de se situer dans le dossier "nginx-windows".**
 
 ```bash
-start nginx.exe
+start nginx
 ```
 
 
@@ -80,6 +80,8 @@ Lors du lancement du client, il sera demander d'indiquer le domaine ainsi que le
 ```
 http://adresse_ip:port
 ```
+
+En cas d'utilisation avec NGINX, l'adresse IP sera celle de la machine qui exécute NGINX, et le port sera 8181.
 
 Le programme proposera ensuite les appels à l'API réalisables.
 
