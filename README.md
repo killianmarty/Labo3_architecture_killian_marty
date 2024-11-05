@@ -1,6 +1,6 @@
 # API système de cours
 
-Mayatta Ndiayre, Killian Marty
+Mayatta Ndiaye, Killian Marty
 
 ## Fonctionnement
 
@@ -55,6 +55,10 @@ server 172.16.13.32:3000;
 ```bash
 start nginx
 ```
+
+**Attention: lors de l'utilisation de NGINX avec plusieurs serveur, les données ne seront pas synchronisées entre les serveurs.**
+
+**Par exemple si on fait une requête pour créer un cours et que c'est le serveur 1 qui la reçoit, puis que l'on fait une requête pour lire le nouveau cours et que c'est le serveur 2 qui la reçoit, le serveur va renvoyer "cours not found". On peut observer ce phénomène à plusieurs reprises dans la vidéo de démonstration.**
 
 
 ## Lancer le client
